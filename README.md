@@ -1,8 +1,8 @@
-# Badger2040 - Custom Multiple Image Display
+# Badger2040 - Custom Multiple Image Display Firmware
 
 **What is this project?**
 
-A small custom firmware, which allows to you to display custom images (presented by a bitmap) on your Badger2040.
+A small custom firmware, which allows to you to display multiple custom images (presented by a bitmap) on your Badger2040.
 
 **What is a Badger2040?**
 
@@ -19,7 +19,7 @@ BadgerOS reads the images from Flash, decodes them automatically from JPEG and t
 This can lead to some artifacts displayed on screen:
 ![Top: BadgerOS Example Bottom: My Bitmap](./assets/comparisons-bitmaps-vs-badger.jpg)
 The top example is from BadgerOS. The bottom example is from this project.
-You can clearly see the artefacts created by BadgerOS. 
+You can clearly see the artefacts created by BadgerOS and the crisp clear image when using bitmaps (like this project does). 
 
 ## Setup of this Arduino Environment
 
@@ -42,7 +42,6 @@ After you have converted the color parts of your original image, you can convert
 This bitmap can then be added to this project, e.g. in the `bitmaps.h` file.
 
 
-
 ## Display
 
 The display of the Badger seems to have an uc8151d driver.
@@ -60,3 +59,11 @@ Here are my settings for this display that results in one of my example bitmaps.
 
 You can find the [PIN-Out](https://github.com/pimoroni/pimoroni-pico/blob/main/libraries/badger2040/badger2040.hpp) here.
 Generally the Pimoroni Source Code seems to be a good place to look for documentation. 
+
+
+## Usage
+
+1. Convert Image to Bitmap
+2. Copy to `bitmaps.h` (See `bitmaps.example.h` for examples)
+3. Flash the Badger
+4. Switch between images by pressing up and down keys. 
